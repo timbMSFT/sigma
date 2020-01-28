@@ -1,0 +1,11 @@
+title: Azure Log Analytics Windows index and EventID field mapping
+order: 20
+backends:
+  - ala
+logsources:
+  dns-server:
+    product: windows
+    service: dns-server
+fieldmappings:
+    EventQQID: EventQQId
+    QNAME: Name
