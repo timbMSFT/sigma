@@ -91,6 +91,3 @@ ENV/
 # vi(m)
 *.swp
 settings.json
-/.vs/VSWorkspaceState.json
-/.vs/slnx.sqlite
-/.vs/ProjectSettings.json

@@ -108,9 +108,6 @@ class AzureLogAnalyticsBackend(SingleTextQueryBackend):
                 self.table = "SecurityEvent"
                 self.eventid = "4688"
 
-        if (self.product, self.service) == ("windows", "dns-server"):
-                self.table = "DnsEvents"
-
         return super().generate(sigmaparser)
 
     def generateBefore(self, parsed):
