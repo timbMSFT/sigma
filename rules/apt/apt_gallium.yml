@@ -16,7 +16,7 @@ level: high
 ---
 logsource:
     category: process_creation
-    product: windows
+    product: sysmon
 detection:
     exec_selection:
         Hashes:
@@ -56,3 +56,16 @@ detection:
             - 'dffwescwer4325.myftp.biz'
             - 'cvdfhjh1231.ddns.net'
     condition: c2_selection
+---
+logsource:
+    category: process_creation
+    product: sysmon
+detection:
+    legitimate_process_path:
+        Image|contains:
+            - ':\Program Files(x86)\'
+            - ':\Program Files\'
+    legitimate_executable:
+        Hashes|contains:
+            - 'e570585edc69f9074cb5e8a790708336bd45ca0f'
+    condition: legitimate_executable and not legitimate_process_path
